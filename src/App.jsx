@@ -39,9 +39,9 @@ function App() {
   };
 
   return (
-    <div className="container mx-auto p-4">
+    <div data-theme="mytheme" className="container mx-auto p-4">
       <h1 className="text-4xl font-bold mb-4">Idea Manager</h1>
-      <div className="mb-4">
+      <div className="mb-8">
         <input type="text" name="title" placeholder="Idea Title" value={newIdea.title} onChange={handleInputChange} className="input input-bordered w-full mb-2" />
         <textarea name="description" placeholder="Idea Description" value={newIdea.description} onChange={handleInputChange} className="textarea textarea-bordered w-full mb-2"></textarea>
         <input type="text" name="tags" placeholder="Tags (comma-separated)" value={newIdea.tags.join(", ")} onChange={handleTagChange} className="input input-bordered w-full mb-2" />
@@ -49,7 +49,7 @@ function App() {
           {editingIdea ? "Update Idea" : "Add Idea"}
         </button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {ideas.map((idea) => (
           <div key={idea.id} className="card bg-base-100 shadow-xl">
             <div className="card-body">
